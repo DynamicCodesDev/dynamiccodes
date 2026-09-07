@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#191919">
+  <meta name="description" content="Dynamic Codes — sviluppo software e assistenza tecnica. Il nuovo sito sarà presto online.">
+  <title>Dynamic Codes — Work in progress</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --background: #191919;
+      --surface: #202020;
+      --text: #f7f7f4;
+      --muted: #a9aaa7;
+      --cyan: #52bdd2;
+      --magenta: #bb3a92;
+      --yellow: #f5c76b;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(82, 189, 210, .12), transparent 30rem),
+        radial-gradient(circle at 86% 82%, rgba(187, 58, 146, .12), transparent 28rem),
+        var(--background);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(920px, calc(100% - 40px));
+      padding: 64px 0;
+      text-align: center;
+    }
+
+    .logo {
+      display: block;
+      width: min(530px, 88vw);
+      height: auto;
+      margin: 0 auto 46px;
+      border-radius: 22px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 24px;
+      color: var(--yellow);
+      font-size: .82rem;
+      font-weight: 750;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .status::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: currentColor;
+      box-shadow: 0 0 18px rgba(245, 199, 107, .72);
+      content: "";
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0 auto 20px;
+      font-size: clamp(2.5rem, 7vw, 5.6rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, var(--cyan), var(--magenta));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .intro {
+      max-width: 620px;
+      margin: 0 auto 34px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+      line-height: 1.65;
+    }
+
+    .contact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .contact:hover,
+    .contact:focus-visible {
+      border-color: var(--cyan);
+      box-shadow: 0 12px 35px rgba(82, 189, 210, .14);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    footer {
+      margin-top: 58px;
+      color: #717370;
+      font-size: .85rem;
+    }
+
+    @media (max-width: 560px) {
+      main { padding: 42px 0; }
+      .logo { margin-bottom: 34px; border-radius: 14px; }
+      footer { margin-top: 44px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .contact { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="logo" src="dynamic-codes-logo.png" alt="Dynamic Codes">
+    <p class="status">Work in progress</p>
+    <h1>Stiamo costruendo qualcosa di <span>dinamico.</span></h1>
+    <p class="intro">Sviluppo software e assistenza tecnica. Il nuovo sito Dynamic Codes sarà presto online.</p>
+    <a class="contact" href="mailto:info@dynamiccodes.it">info@dynamiccodes.it</a>
+    <footer>&copy; <span id="year"></span> Dynamic Codes</footer>
+  </main>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
